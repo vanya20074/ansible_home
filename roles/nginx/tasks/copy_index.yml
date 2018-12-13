@@ -9,7 +9,7 @@
   become: yes
   template: src={{item.src}} dest={{item.dest}}
   with_items:
-      - { src: 'index.html.j2', dest: '/var/www/test1.ua/index.html' }
-      - { src: 'index.html.j2', dest: '/var/www/test2.ua/index.html' }
+      - { src: 'index.php.j2', dest: '/var/www/test1.ua/index.php' }
+      - { src: 'index.php.j2', dest: '/var/www/test2.ua/index.php' }
 
 
