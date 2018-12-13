@@ -1,0 +1,7 @@
+- name: Install mysql server
+  become: true
+  apt: name=mysql-server update_cache=yes state=latest
+
+- name: Install python-mysqldb
+  become: true
+  apt: name=python-mysqldb update_cache=yes state=latest

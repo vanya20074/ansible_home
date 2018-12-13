@@ -1,0 +1,5 @@
+- name: Add hosts to /etc/hosts
+  lineinfile:
+   path: /etc/hosts
+   line: "{{ansible_host}} {{ item }}" 
+  with_items: "{{vhosts}}"

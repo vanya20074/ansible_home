@@ -1,0 +1,15 @@
+- name: Create Folders for vhost
+  command: mkdir {{item}}
+  ignore_errors: yes
+  with_items:
+      - '/var/www/test1.ua'
+      - '/var/www/test2.ua'
+
+- name: Upload default nginx index.html for host 
+  become: yes
+  template: src={{item.src}} dest={{item.dest}}
+  with_items:
+      - { src: 'index.html.j2', dest: '/var/www/test1.ua/index.html' }
+      - { src: 'index.html.j2', dest: '/var/www/test2.ua/index.html' }
+
+

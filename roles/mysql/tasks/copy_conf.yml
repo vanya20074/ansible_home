@@ -1,0 +1,5 @@
+- name: Upload mysql config for host
+  become: yes
+  template: src=roles/mysql/templates/my.cnf.j2 dest=/etc/mysql/my.cnf
+  notify:
+    - restart mysql

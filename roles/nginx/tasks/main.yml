@@ -1,0 +1,5 @@
+- include: install_nginx.yml
+- include: copy_index.yml
+- include: copy_conf.yml
+- include: hostname_conf.yml
+- include: vhost_conf.yml

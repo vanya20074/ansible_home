@@ -1,0 +1,8 @@
+- name: Upload apache configs
+  become: yes
+  template: src={{item.src}} dest={{item.dest}}
+  with_items:
+      - { src: 'ports.conf.j2', dest: '/etc/apache2/ports.conf' }
+      - { src: '000-default.conf.j2', dest: '/etc/apache2/sites-available/000-default.conf' }
+  notify: 
+      - restart apache

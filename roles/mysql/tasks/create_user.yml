@@ -1,0 +1,21 @@
+- name: Create root@% user
+  mysql_user: 
+   login_user: root
+   login_password: root
+   check_implicit_admin: yes
+   name: root
+   password: root
+   host: '%'
+   priv: '*.*:ALL'
+   state: present
+- name: Create root@localhost user
+  mysql_user:
+   login_user: root
+   login_password: root
+   check_implicit_admin: yes
+   name: root
+   password: root
+   host: 'localhost'
+   priv: '*.*:ALL'
+   state: present
+ 

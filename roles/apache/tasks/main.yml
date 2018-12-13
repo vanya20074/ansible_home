@@ -1,0 +1,3 @@
+- include: install_apache.yml
+- include: copy_index.yml
+- include: copy_conf.yml

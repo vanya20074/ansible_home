@@ -1,0 +1,5 @@
+- include: install_mysql.yml
+- include: copy_conf.yml
+- include: create_user.yml
+- include: remove_test_db.yml
+- include: remove_users_without_password.yml

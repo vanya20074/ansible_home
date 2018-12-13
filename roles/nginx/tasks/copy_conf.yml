@@ -1,0 +1,7 @@
+- name: Upload nginx configs
+  become: yes
+  template: src={{item.src}} dest={{item.dest}}
+  with_items:
+      - { src: 'default.j2', dest: '/etc/nginx/sites-enabled/default' }
+  notify: 
+      - restart nginx
