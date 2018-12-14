@@ -11,9 +11,9 @@
 
 - name: Upload default nginx index.html for host 
   become: yes
-  template: src={{item.src}} dest={{item.dest}}
-  with_items:
-      - { src: 'index.php.j2', dest: '/var/www/test1.ua/index.php' }
-      - { src: 'index.php.j2', dest: '/var/www/test2.ua/index.php' }
-
+  template: src=index.php.j2 dest=/var/www/{{item}}/index.php
+  with_items: "{{vhosts}}"
+  #    - { src: 'index.php.j2', dest: '/var/www/test1.ua/index.php' }
+  #    - { src: 'index.php.j2', dest: '/var/www/test2.ua/index.php' }
+  
 
