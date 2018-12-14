@@ -1,9 +1,13 @@
 - name: Create Folders for vhost
-  command: mkdir {{item}}
-  ignore_errors: yes
-  with_items:
-      - '/var/www/test1.ua'
-      - '/var/www/test2.ua'
+  file:
+   path: "/var/www/{{item}}"
+   state: directory
+  with_items: "{{vhosts}}"
+#  command: mkdir {{item}}
+#  ignore_errors: yes
+#  with_items:
+#      - '/var/www/test1.ua'
+#      - '/var/www/test2.ua'
 
 - name: Upload default nginx index.html for host 
   become: yes
