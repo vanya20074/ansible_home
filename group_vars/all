@@ -1,7 +1,8 @@
 apache_port: 82
-nginx_port: 83
+nginx_port: 84
 mysql_port: 3306
 vhosts: 
  - test1.ua
  - test2.ua
  - test3.ua
+ - test4.ua

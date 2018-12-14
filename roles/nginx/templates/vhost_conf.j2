@@ -2,10 +2,10 @@ server {
         listen {{nginx_port}};
         listen [::]:{{nginx_port}};
 
-        root /var/www/{{vhost}};
+        root /var/www/{{item}};
         index index.php index.html index.htm index.nginx-debian.html;
 
-        server_name {{vhost}};
+        server_name {{item}};
 
         location / {
                 try_files $uri $uri/ =404;
