@@ -4,3 +4,4 @@ mysql_port: 3306
 vhosts: 
  - test1.ua
  - test2.ua
+ - test3.ua

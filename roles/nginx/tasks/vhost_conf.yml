@@ -1,8 +1,9 @@
-- name: Upload nginx configs
+- name: Upload vhost configs
   become: yes
-  template: src={{item.src}} dest={{item.dest}}
-  with_items:
-      - { src: 'default.j2', dest: '/etc/nginx/sites-enabled/default' }
-      - { src: 'vhost_conf.j2', dest: '/etc/nginx/sites-enabled/vhost.conf' }
-  notify: 
+  template: src=vhost_conf.j2 dest=/etc/nginx/sites-enabled/{{item}}.conf
+  vars:
+   vhost: "{{item}}"
+  with_items: "{{vhosts}}"
+  notify:
       - restart nginx
+
